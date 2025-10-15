@@ -35,11 +35,7 @@ const Edit = () => {
     const { mutate } = useUpdateVoucher(id!)
 
     const onSubmit = (data: VoucherFormValues) => {
-        const payload = {
-            ...data,
-            expiry_date: data.expiry_date?.toISOString().slice(0, 19).replace("T", " "),
-        }
-        mutate(payload)
+        mutate(data)
     }
     if (isPending) {
         return <Loader/>

@@ -11,13 +11,13 @@ export type Voucher = {
 export type VoucherFormValues = Omit<Voucher, "id" | "created_at">
 
 export type VoucherStore = {
-    id: string
+    id?: string
     name: string
     code: string
     description: string
     expiry_date: string
     currency: string
-    created_at: Date
+    created_at?: Date
 }
 
 export type VoucherTrack = {
